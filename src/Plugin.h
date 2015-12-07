@@ -1,18 +1,18 @@
-//
-// Created by elken on 03/12/15.
-//
-
 #ifndef PLUGINLOADER_PLUGIN_H
 #define PLUGINLOADER_PLUGIN_H
 #include <string>
+#include "luainc.h"
+#include "Util.hpp"
 
-struct Plugin
+class Plugin
 {
-    std::string type;
-    std::string name;
-    std::string path;
-    std::string version;
+public:
     std::string getAttr(lua_State* lua, std::string attr);
+	
+	Property<std::string> type;
+	Property<std::string> name;
+	Property<std::string> version;
+	Property<std::string> path;
 };
 
 
